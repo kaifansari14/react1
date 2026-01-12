@@ -1,0 +1,136 @@
+What is React?
+-> React is a JS library used to build user interfaces, especially single-page applications(SPAs)
+
+Why React exists?
+    Traditional JS:
+        - Manually update DOM
+        - Messy event handling
+        - Hard to scale
+
+    React:
+    - UI is broken into components
+    - UI updated automatically when data changes
+    - Much easier to reason about complex apps
+
+History of React
+-> Origins and invention (2011 - 2013)
+    - 2011 - Created at Facebook by Jordan Walke (inspired by XHP, a PHP component framework).
+    - 2012 - Used internally in Facebook's News Feed.
+    - 2013 - Open-sourced at JSConf US.
+        JSX (HTML in JS) was initially controversial.
+
+-> Growth & Adoption (2014 - 2016)
+    - 2014 - Used in instagram.com
+    - 2015 - React Native announced (React for mobile).
+    - 2016 - Create React App launched for bootstrapping React apps.
+
+-> Modern Evolution
+    - 2019 - Hooks introduced in React 16.8, revolutionizing state management in functional components.
+    - Today - React powers Facebook, Instagram, Netflix, Airbnb, and more.
+    - It's also the core of Next.js, the most popular full-stack React framework.
+
+React, DOM, and JS essentials
+-> Understanding the DOM in React
+    - Virtual DOM
+        - A lightweight JS object representing the UI
+        - Stored in memory as JS objects
+        - Very fast to update
+        - Used with React (React.createElement or JSX)
+        - What is it? A virtual copy of the real DOM kept in memory
+
+    Example:
+    {
+        type: 'h1',
+        props: {
+            children: 'Hello world'
+        }
+    }
+
+Summary
+|===============================================================
+|    Feature         Virtual DOM         Real DOM
+================================================================
+|    Speed           Fast                Slow
+|    Storage         In memory           Browser
+|    Updates         Smart diffing       Full re-render
+|    Manipulation    React logic         Browser API
+|===============================================================
+
+
+Library vs Framework
+-> Library - Like your toy box
+    - You use only what you want
+    - You control the flow
+    - Examples: React, Lodash, jQuery, Axios
+
+-> Framework - like LEGO instructions
+    - Structure is defined
+    - You follow the rules
+    - Examples: Angular, Express, Django
+
+What is a CDN?
+    - CDN = Content Delivery Network
+    - Network of global servers that deliver content faster
+
+Benefits:
+    - Faster load items
+    - Reduced server load
+    - Better availability
+
+Why is React is called "React"?
+    - Reacts to data changes by updating UI efficiently using Virtual DOM
+
+Difference between React and React DOM
+    - React = Core logic (components, hooks, state)
+    - ReactDOM = Connects React with the actual DOM
+
+react.development.js vs react.production.js
+--------------------------------------------------------------
+    File            Purpose         Minified        Warnings
+--------------------------------------------------------------
+    development     Dev mode        No              Yes
+    production      Live mode       Yes             No
+--------------------------------------------------------------
+
+Remember:
+    - React element is an object not HTML
+    - React only runs inside the root element
+
+JSX vs React.createElement
+    - React.createElement is verbose
+    - JSX makes code easier to write and understand
+    const heading = <h1>Hello from React<</h1>
+
+Bundlers: your shipping department
+-> A bundler takes all your source assets & outputs an optimised bundle that browsers can download
+
+Typical pipeline:
+    1. Read every import/require
+    2. Transpile (JSX -> JS, TS -> JS, etc)
+    3. Concatenate / code-split
+    4. Minify & tree-shake unused code
+    5. Generate hashed filenames for long-term caching
+    6. Server with HMR (Hot Module Replacement) during development
+
+Popular options for React:
+        Bundler                                     Highlights
+        Webpack                     The most flexible & battle-tested. Large plugin ecosystem.
+        Vite                        Next-gen, instant dev server via native ES modules, uses Rollup for production. Recommended now that create-react-app is EOL.
+        Parcel                      Zero-config, smart defaults, blazing-fast builds thanks to a C++ core. Great for beginners.
+
+Dependencies vs Dev Dependencies
+        Purpose                                 Install command             Stored under
+        Runtime / production code               npm install axios           dependencies
+        Tooling needed only while developing    npm install -D eslint       devDependencies
+                                                (alias: --save-dev)
+
+Version ranges: ^ vs ~
+^ caret         Minor and patch versions        17.0.2, 17.1.0 ... but not 18.0.0
+~ tilde         Patch versions only             17.0.2, 17.0.9 ... but not 17.1.0
+
+Use ^ for most libraries; switch to ~ when you must lock down to patch versions
+
+                            19.2.5
+                            19 is major
+                            2 is minor
+                            5 is patch
